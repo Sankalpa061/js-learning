@@ -17,8 +17,14 @@
 // display()
 
 
-// Arrow Function
-const fun = () =>{
-    console.log(this)
-}
-fun()
+// // Arrow Function
+// const fun = () =>{
+//     console.log(this)
+// }
+// fun()
+
+// Immediately Invoked Function Execution
+// (() =>{
+//     console.log("Hello")
+// })()
+
