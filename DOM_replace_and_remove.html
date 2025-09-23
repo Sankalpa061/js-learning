@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_replace and remove</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLang(lang){
+        const li = document.createElement('li')
+        const addText = document.createTextNode(lang)
+        li.appendChild(addText)
+        const selected = document.querySelector('.language')
+        selected.appendChild(li) 
+    }
+    addLang('Python')
+    addLang('Dart')
+    addLang('CPP')
+
+    function replaceLang(lang,index){
+        const thirdLang = document.querySelector(`li:nth-child(${index})`)
+        const newli = document.createElement('li')
+        const addText = document.createTextNode(lang)
+        newli.appendChild(addText)
+        thirdLang.replaceWith(newli)
+    }
+    replaceLang("C",3)
+    replaceLang("QBASIC",4)
+
+    const removeElement = document.querySelector('li:nth-child(4)')
+    removeElement.remove()
+
+
+
+    
+</script>
+</html>
