@@ -2,14 +2,13 @@
 // Put the cloth in the washing machine
 // wipe the dust away
 
-
+const coffee_made = true
 const clothes_washed = true
-const rooms_cleaned = false
+const rooms_cleaned = true
 
 function makeCoffee(){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const coffee_made = true
             if(coffee_made){
                 resolve('Coffee is ready!!🍵');
             }
