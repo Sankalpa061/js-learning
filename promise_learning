@@ -2,13 +2,11 @@
 // Put the cloth in the washing machine
 // wipe the dust away
 
-const coffee_made = true
-const clothes_washed = true
-const rooms_cleaned = true
 
 function makeCoffee(){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            const coffee_made = true
             if(coffee_made){
                 resolve('Coffee is ready!!🍵');
             }
@@ -22,6 +20,7 @@ function makeCoffee(){
 function washClothes(){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            const clothes_washed = true
             if(clothes_washed){
                 resolve ('Clothes got washed!!👔');
             }
@@ -35,6 +34,7 @@ function washClothes(){
 function cleanRoom(){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            const rooms_cleaned = true
             if(rooms_cleaned){
                 resolve ('Rooms cleaned !! 🧹');
             }
