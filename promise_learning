@@ -49,4 +49,3 @@ makeCoffee().then(value => {console.log(value); return washClothes()})
             .then(value => {console.log(value); return cleanRoom()})
             .then(value => {console.log(value); console.log("All the tasks completed !! ✅")})
             .catch(error => console.log(error));
-
