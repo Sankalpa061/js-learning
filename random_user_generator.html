@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random user generator</title>
+</head>
+<body style="background-color: #212121;">
+    <h1 style="color: #fff;">Random User Generator</h1>
+    <button type="button" id="generate">Generate</button>
+    <div id="displaySection" style="color: #fff;"></div>
+
+</body>
+<script>
+    async function generateUser() {
+        try{
+            const response = await fetch('https://randomuser.me/api/');
+            if(!response.ok){
+                throw new Error('Error fetching the user information!!');
+            }
+            const data = await response.json();
+            const name = data.results[0].name.first;
+            const email = data.results[0].email;
+            const pic = data.results[0].picture.large;
+            document.querySelector('#displaySection').innerHTML = `<p><strong>Name:</strong>${name}</p>
+            <p><strong>Email:</strong>${email}</p>
+            <img src='${pic}'>`
+        }
+        catch(error){
+            console.log('Error: ',error)
+
+        }
+    }
+
+    const button = document.querySelector('#generate');
+    button.addEventListener('click',()=>{
+        generateUser();
+    })
+
+</script>
+</html>
